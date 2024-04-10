@@ -93,7 +93,7 @@ module.exports = {
 				await checkAndSaveData("avatar", newImageSrc.image.url);
 				break;
 			}
-			case "name": {
+			case "اسم": {
 				const { threadName } = await threadsData.get(threadID);
 				await checkAndSaveData("name", threadName);
 				break;
