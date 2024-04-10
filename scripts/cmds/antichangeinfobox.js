@@ -1,6 +1,6 @@
-const { getStreamFromURL, uploadImgbb } = global.utils;
+//const { getStreamFromURL, uploadImgbb } = global.utils;
 
-module.exports = {
+*//module.exports = {
 	config: {
 		name: "حماية",
 		version: "1.9",
