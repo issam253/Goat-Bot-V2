@@ -4,22 +4,21 @@ const { client } = global;
 
 module.exports = {
 	config: {
-		name: "adminonly",
-		aliases: ["adonly", "onlyad", "onlyadmin"],
+		name: "تقيد",
+		aliases: ["adonly"],
 		version: "1.5",
 		author: "NTKhang",
 		countDown: 5,
 		role: 2,
 		description: {
 			vi: "bật/tắt chế độ chỉ admin mới có thể sử dụng bot",
-			en: "turn on/off only admin can use bot"
+			en: "يستخدم لتقيد مجموعة من استخدام البوت"
 		},
-		category: "owner",
+		category: "ادمن",
 		guide: {
 			vi: "   {pn} [on | off]: bật/tắt chế độ chỉ admin mới có thể sử dụng bot"
 				+ "\n   {pn} noti [on | off]: bật/tắt thông báo khi người dùng không phải là admin sử dụng bot",
-			en: "   {pn} [on | off]: turn on/off the mode only admin can use bot"
-				+ "\n   {pn} noti [on | off]: turn on/off the notification when user is not admin use bot"
+			en: "   {pn} [تشغيل | ايقاف]: لتشغيل و ايقاف التقيد"
 		}
 	},
 
@@ -31,10 +30,10 @@ module.exports = {
 			turnedOffNoti: "Đã tắt thông báo khi người dùng không phải là admin sử dụng bot"
 		},
 		en: {
-			turnedOn: "Turned on the mode only admin can use bot",
-			turnedOff: "Turned off the mode only admin can use bot",
-			turnedOnNoti: "Turned on the notification when user is not admin use bot",
-			turnedOffNoti: "Turned off the notification when user is not admin use bot"
+			turnedOn: "🔰| تم تقيد المجموعة بنجاح!",
+			turnedOff: "تم ايقاف تقيد المجموعة.",
+			turnedOnNoti: "تم 🔰",
+			turnedOffNoti: "تم ❌"
 		}
 	},
 
@@ -48,9 +47,9 @@ module.exports = {
 			indexGetVal = 1;
 		}
 
-		if (args[indexGetVal] == "on")
+		if (args[indexGetVal] == "تشغيل")
 			value = true;
-		else if (args[indexGetVal] == "off")
+		else if (args[indexGetVal] == "ايقاف")
 			value = false;
 		else
 			return message.SyntaxError();
