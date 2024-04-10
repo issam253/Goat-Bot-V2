@@ -1,21 +1,20 @@
 module.exports = {
 	config: {
-		name: "onlyadminbox",
-		aliases: ["onlyadbox", "adboxonly", "adminboxonly"],
+		name: "مسؤولين-فقض",
+		aliases: ["مسؤولين-المجموعة"],
 		version: "1.3",
 		author: "NTKhang",
 		countDown: 5,
 		role: 1,
 		description: {
 			vi: "bật/tắt chế độ chỉ quản trị của viên nhóm mới có thể sử dụng bot",
-			en: "turn on/off only admin box can use bot"
+			en: "وضع مسؤولين المجموعة فقض"
 		},
-		category: "box chat",
+		category: "المجموعات",
 		guide: {
 			vi: "   {pn} [on | off]: bật/tắt chế độ chỉ quản trị viên nhóm mới có thể sử dụng bot"
 				+ "\n   {pn} noti [on | off]: bật/tắt thông báo khi người dùng không phải là quản trị viên nhóm sử dụng bot",
-			en: "   {pn} [on | off]: turn on/off the mode only admin of group can use bot"
-				+ "\n   {pn} noti [on | off]: turn on/off the notification when user is not admin of group use bot"
+			en: "   {pn} [تشغيل | ايقاف]: لإيقاف وتشغيل الوضع "
 		}
 	},
 
@@ -28,11 +27,11 @@ module.exports = {
 			syntaxError: "Sai cú pháp, chỉ có thể dùng {pn} on hoặc {pn} off"
 		},
 		en: {
-			turnedOn: "Turned on the mode only admin of group can use bot",
-			turnedOff: "Turned off the mode only admin of group can use bot",
-			turnedOnNoti: "Turned on the notification when user is not admin of group use bot",
-			turnedOffNoti: "Turned off the notification when user is not admin of group use bot",
-			syntaxError: "Syntax error, only use {pn} on or {pn} off"
+			turnedOn: "تم تشغيل وضع مسؤولين المجموعة فقض.",
+			turnedOff: "تم ايقاف وضع مسؤولين المجموعة فقض ",
+			turnedOnNoti: "تم تشغيل الإشعار عندما لا يكون المستخدم مسؤولاً عن روبوت الاستخدام الجماعي",
+			turnedOffNoti: "تم إيقاف تشغيل الإشعار عندما لا يكون المستخدم مسؤولاً عن روبوت الاستخدام الجماعي",
+			syntaxError: "خطاء ❌,\n\n استخدم {pn} تشغيل او {pn} ايقاف"
 		}
 	},
 
@@ -48,9 +47,9 @@ module.exports = {
 			keySetData = "data.hideNotiMessageOnlyAdminBox";
 		}
 
-		if (args[indexGetVal] == "on")
+		if (args[indexGetVal] == "تشغيل")
 			value = true;
-		else if (args[indexGetVal] == "off")
+		else if (args[indexGetVal] == "ايقاف")
 			value = false;
 		else
 			return message.reply(getLang("syntaxError"));
