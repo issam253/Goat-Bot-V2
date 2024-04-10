@@ -1,7 +1,7 @@
 //const { getStreamFromURL, uploadImgbb } = global.utils;
 
 *//module.exports = {
-	config: {
+	//config: {
 		name: "حماية",
 		version: "1.9",
 		author: "NTKhang",
