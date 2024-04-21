@@ -100,38 +100,35 @@ module.exports = {
 			pageNotFound: "Trang %1 không tồn tại"
 		},
 		en: {
-			help: "╭─────────────⭓"
+			help: "قائمة الأوامر بروماكس🤡"
 				+ "\n%1"
-				+ "\n├─────⭔"
-				+ "\n│ Page [ %2/%3 ]"
-				+ "\n│ Currently, the bot has %4 commands that can be used"
-				+ "\n│ » Type %5help <page> to view the command list"
-				+ "\n│ » Type %5help to view the details of how to use that command"
-				+ "\n├────────⭔"
-				+ "\n│ %6"
-				+ "\n╰─────────────⭓",
-			help2: "%1├───────⭔"
-				+ "\n│ » Currently, the bot has %2 commands that can be used"
-				+ "\n│ » Type %3help <command name> to view the details of how to use that command"
-				+ "\n│ %4"
-				+ "\n╰─────────────⭓",
-			commandNotFound: "Command \"%1\" does not exist",
-			getInfoCommand: "╭── NAME ────⭓"
-				+ "\n│ %1"
-				+ "\n├── INFO"
-				+ "\n│ Description: %2"
-				+ "\n│ Other names: %3"
-				+ "\n│ Other names in your group: %4"
-				+ "\n│ Version: %5"
-				+ "\n│ Role: %6"
-				+ "\n│ Time per command: %7s"
-				+ "\n│ Author: %8"
-				+ "\n├── USAGE"
-				+ "\n│%9"
-				+ "\n├── NOTES"
-				+ "\n│ The content inside <XXXXX> can be changed"
-				+ "\n│ The content inside [a|b|c] is a or b or c"
-				+ "\n╰──────⭔",
+				+ "\n⁦⁦≧------------------≦"
+				+ "\n◉  🧾الصفحة: [ %2/%3 ]"
+				+ "\n⁦◉, البوت يحتوي على  %4 يمكن استخدامها"
+				+ "\n◉ » استخدم %5الاوامر <الصفحة> لعرض الباقي.."
+				+ "\n◉ » اكتب %5شرح لعرض تفاصيل كيفية استخدام هذا الأمر"
+				+ "\n⁦✷__________________✷"
+				+ "\n✷ %6"
+				+ "\n✷__________________✷",
+			help2: "%1≧------------------≦"
+				+ "\n◉ » حاليًا، يحتوي الروبوت على %2 أوامر يمكن استخدامها"
+				+ "\n◉ » اكتب %3شرح <اسم الامر> لعرض تفاصيل كيفية استخدام هذا الأمر"
+				+ "\n◉ %4"
+				+ "\n✷__________________✷",
+			commandNotFound: "الامر \"%1\" غير موجود 🤡",
+			getInfoCommand: "✷ المعلومات ✷"
+				+ "\n✷ %1"
+				+ "\n✷ــــــ معلومات"
+				+ "\n✷ العنوان : %2"
+				+ "\n✷ اسماء أخرى : %3"
+				+ "\n✷ اسماء أخرى في المجموعة : %4"
+				+ "\n✷ الاصدار : %5"
+				+ "\n✷ الدور : %6"
+				+ "\n✷ يستغرق : %7s"
+				+ "\n✷ المطور : %8"
+				+ "\n✷── الإستخدام"
+				+ "\n✷%9"
+				+ "\n✷__________________✷",
 			onlyInfo: "╭── INFO ────⭓"
 				+ "\n│ Command name: %1"
 				+ "\n│ Description: %2"
@@ -152,13 +149,13 @@ module.exports = {
 			onlyRole: "╭── ROLE ────⭓"
 				+ "\n│%1"
 				+ "\n╰─────────────⭓",
-			doNotHave: "Do not have",
-			roleText0: "0 (All users)",
-			roleText1: "1 (Group administrators)",
-			roleText2: "2 (Admin bot)",
-			roleText0setRole: "0 (set role, all users)",
-			roleText1setRole: "1 (set role, group administrators)",
-			pageNotFound: "Page %1 does not exist"
+			doNotHave: "لايوجد",
+			roleText0: "كل المستخدمين",
+			roleText1: "مسؤولون المجموعة ",
+			roleText2: "مسؤولين البوت",
+			roleText0setRole: "الكل",
+			roleText1setRole: "تعيين الدور، مسؤولي المجموعة",
+			pageNotFound: "الصفحة %1 ليست موجودة"
 		}
 	},
 
@@ -236,7 +233,7 @@ module.exports = {
 
 				const returnArray = allPage[page - 1] || [];
 				const startNumber = (page - 1) * numberOfOnePage + 1;
-				msg += (returnArray || []).reduce((text, item, index) => text += `│ ${index + startNumber}${index + startNumber < 10 ? " " : ""}. ${item.data}\n`, '').slice(0, -1);
+				msg += (returnArray || []).reduce((text, item, index) => text += `│ ${index + startNumber}${index + startNumber < 10 ? " " 🤡 ""}. ${item.data}\n`, '').slice(0, -1);
 				await message.reply(getLang("help", msg, page, totalPage, commands.size, prefix, doNotDelete));
 			}
 			else if (sortHelp == "category") {
