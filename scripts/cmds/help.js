@@ -218,7 +218,7 @@ module.exports = {
 					else if (value.config.description)
 						description = checkLangObject(value.config.description, langCode);
 					if (description)
-						describe += `: ${cropContent(description.charAt(0).toUpperCase() + description.slice(1), 50)}`;
+						describe += `╬ ${cropContent(description.charAt(0).toUpperCase() + description.slice(1), 50)}`;
 					arrayInfo.push({
 						data: describe,
 						priority: value.priority || 0
