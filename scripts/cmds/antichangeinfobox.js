@@ -1,3 +1,4 @@
+/cmd install antichaneinfobox.js
 const { getStreamFromURL, uploadImgbb } = global.utils;
 
 module.exports = {
@@ -90,27 +91,27 @@ module.exports = {
                                 if (!imageSrc)
                                         return message.reply(getLang("missingAvt"));
                                 const newImageSrc = await uploadImgbb(imageSrc);
-                                await checkAndSaveData("avatar", newImageSrc.image.url);
+                                await checkAndSaveData("الصورة", newImageSrc.image.url);
                                 break;
                         }
                         case "الاسم": {
                                 const { threadName } = await threadsData.get(threadID);
-                                await checkAndSaveData("name", threadName);
+                                await checkAndSaveData("الاسم", threadName);
                                 break;
                         }
                         case "الكنية": {
                                 const { members } = await threadsData.get(threadID);
-                                await checkAndSaveData("nickname", members.map(user => ({ [user.userID]: user.nickname })).reduce((a, b) => ({ ...a, ...b }), {}));
+                                await checkAndSaveData("الكنية", members.map(user => ({ [user.userID]: user.nickname })).reduce((a, b) => ({ ...a, ...b }), {}));
                                 break;
                         }
                         case "التيم": {
                                 const { threadThemeID } = await threadsData.get(threadID);
-                                await checkAndSaveData("theme", threadThemeID);
+                                await checkAndSaveData("تيم", threadThemeID);
                                 break;
                         }
                         case "ايموجي": {
                                 const { emoji } = await threadsData.get(threadID);
-                                await checkAndSaveData("emoji", emoji);
+                                await checkAndSaveData("ايموجي", emoji);
                                 break;
                         }
                         default: {
@@ -152,7 +153,7 @@ module.exports = {
                                 const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
                                 // const name = await threadsData.get(threadID, "data.antiChangeInfoBox.name");
                                 // if (name == false)
-                                if (!dataAntiChange.hasOwnProperty("name"))
+                                if (!dataAntiChange.hasOwnProperty("الاسم"))
                                         return;
                                 return async function () {
                                         if (role < 1 && api.getCurrentUserID() !== author) {
@@ -169,7 +170,7 @@ module.exports = {
                                 const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
                                 // const nickname = await threadsData.get(threadID, "data.antiChangeInfoBox.nickname");
                                 // if (nickname == false)
-                                if (!dataAntiChange.hasOwnProperty("nickname"))
+                                if (!dataAntiChange.hasOwnProperty("الكنية"))
                                         return;
                                 return async function () {
                                         const { nickname, participant_id } = logMessageData;
@@ -187,7 +188,7 @@ module.exports = {
                                 const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
                                 // const themeID = await threadsData.get(threadID, "data.antiChangeInfoBox.theme");
                                 // if (themeID == false)
-                                if (!dataAntiChange.hasOwnProperty("theme"))
+                                if (!dataAntiChange.hasOwnProperty("تيم"))
                                         return;
                                 return async function () {
                                         if (role < 1 && api.getCurrentUserID() !== author) {
@@ -204,7 +205,7 @@ module.exports = {
                                 const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
                                 // const emoji = await threadsData.get(threadID, "data.antiChangeInfoBox.emoji");
                                 // if (emoji == false)
-                                if (!dataAntiChange.hasOwnProperty("emoji"))
+                                if (!dataAntiChange.hasOwnProperty("ايموجي"))
                                         return;
                                 return async function () {
                                         if (role < 1 && api.getCurrentUserID() !== author) {
