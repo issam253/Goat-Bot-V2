@@ -31,10 +31,10 @@ module.exports = {
     const cores = `كور: ${os.cpus().length}`;
     const arch = `𝗔𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲: ${os.arch()}`;
     const totalMemory = `𝗧𝗼𝘁𝗮𝗹 𝗠𝗲𝗺𝗼𝗿𝘆: ${Math.round(os.totalmem() / (1024 * 1024 * 1024))} GB`;
-    const freeMemory = `𝗙𝗿𝗲𝗲 𝗠𝗲𝗺𝗼𝗿𝘆: ${Math.round(os.freemem() / (1024 * 1024 * 1024))} GB`;
+    const freeMemory = `: ${Math.round(os.freemem() / (1024 * 1024 * 1024))} GB`;
     const uptimeString = `وقت التشغيل: ${days} يوم , ${hours} ساعة, ${mins} دقيقة, و  ${seconds} ثانية`;
 
-    const response = `🕒 ${uptimeString}\n━━━━━━━━━━━━━\n\n📡 ${system}\n🛡 ${cores}\n⚔ البوت نشط🟢\n📊 المستخدم من الرام: ${Math.round(process.memoryUsage().rss / (1024 * 1024))} MB\n💽 مجموع الرام: ${Math.round(os.totalmem() / (1024 * 1024 * 1024))} GB\n💾 رام المستخدم: ${Math.round(os.freemem() / (1024 * 1024 * 1024))} GB\n⏰ وقت التشغيل: ${Math.floor(process.uptime())}\n━━━━━━━━━━━━━`;
+    const response = `🕒 الوقت: ${uptimeString}\n━━━━━━━━━━━━━\n\n📡 الجهاز:${system}\n🛡 ${cores}\n⚔ البوت نشط🟢\n📊 المستخدم من الرام: ${Math.round(process.memoryUsage().rss / (1024 * 1024))} MB\n💽 مجموع الرام: ${Math.round(os.totalmem() / (1024 * 1024 * 1024))} GB\n💾 رام المستخدم: ${Math.round(os.freemem() / (1024 * 1024 * 1024))} GB\n⏰ وقت التشغيل: ${Math.floor(process.uptime())}\n━━━━━━━━━━━━━`;
 
     const gifAttachment = await global.utils.getStreamFromURL("https://i.imgur.com/PzkRrlw.gif");
 
