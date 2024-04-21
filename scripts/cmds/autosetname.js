@@ -6,14 +6,14 @@ function checkShortCut(nickname, uid, userName) {
 
 module.exports = {
 	config: {
-		name: "autosetname",
+		name: "اوتونام",
 		version: "1.3",
 		author: "NTKhang",
 		cooldowns: 5,
 		role: 1,
 		description: {
 			vi: "Tự đổi biệt danh cho thành viên mới vào nhóm chat",
-			en: "Auto change nickname of new member"
+			en: "تغيير لقب العضو الجديد تلقائيًا"
 		},
 		category: "box chat",
 		guide: {
@@ -24,7 +24,7 @@ module.exports = {
 				+ '\n    {pn} set {userName} 🚀'
 				+ '\n\n   {pn} [on | off]: dùng để bật/tắt tính năng này'
 				+ '\n\n   {pn} [view | info]: hiển thị cấu hình hiện tại',
-			en: '   {pn} set <nickname>: use to set config to auto change nickname, with some shortcuts:'
+			en: '   {pn} تعيين <الكنية>: يُستخدم لتعيين التكوين لتغيير اللقب تلقائيًا، مع بعض الاختصارات:'
 				+ '\n   + {userName}: name of new member'
 				+ '\n   + {userID}: member id'
 				+ '\n   Example:'
