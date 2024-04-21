@@ -104,7 +104,7 @@ module.exports = {
 				+ "\n%1"
 				+ "\n⁦⁦≧------------------≦"
 				+ "\n◉  🧾الصفحة: [ %2/%3 ]"
-				+ "\n⁦◉, البوت يحتوي على  %4 يمكن استخدامها"
+				+ "\n⁦◉ البوت يحتوي على  %4 يمكن استخدامها"
 				+ "\n◉ » استخدم %5الاوامر <الصفحة> لعرض الباقي.."
 				+ "\n◉ » اكتب %5شرح لعرض تفاصيل كيفية استخدام هذا الأمر"
 				+ "\n⁦✷__________________✷"
@@ -252,8 +252,8 @@ module.exports = {
 				}
 				arrayInfo.sort((a, b) => (a.category < b.category ? -1 : 1));
 				arrayInfo.forEach((data, index) => {
-					const categoryUpcase = `${index == 0 ? `╭` : `├`}─── ${data.category.toUpperCase()} ${index == 0 ? "⭓" : "⭔"}`;
-					data.names = data.names.sort().map(item => item = `│ ${item}`);
+					const categoryUpcase = `${index == 0 ? `◉` : `◉`}─── ${data.category.toUpperCase()} ${index == 0 ? "✷" : "◉"}`;
+					data.names = data.names.sort().map(item => item = `◉ ${item}`);
 					msg += `${categoryUpcase}\n${data.names.join("\n")}\n`;
 				});
 				message.reply(getLang("help2", msg, commands.size, prefix, doNotDelete));
@@ -310,7 +310,7 @@ module.exports = {
 			let sendWithAttachment = false; // check subcommand need send with attachment or not
 
 			if (args[1]?.match(/^-g|guide|-u|usage$/)) {
-				formSendMessage.body = getLang("onlyUsage", guideBody.split("\n").join("\n│"));
+				formSendMessage.body = getLang("onlyUsage", guideBody.split("\n").join("\n◉"));
 				sendWithAttachment = true;
 			}
 			else if (args[1]?.match(/^-a|alias|aliase|aliases$/))
@@ -340,7 +340,7 @@ module.exports = {
 					roleText,
 					configCommand.countDown || 1,
 					author || "",
-					guideBody.split("\n").join("\n│")
+					guideBody.split("\n").join("\n◉")
 				);
 				sendWithAttachment = true;
 			}
