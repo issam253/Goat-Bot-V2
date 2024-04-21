@@ -1,7 +1,7 @@
-//const { getStreamFromURL, uploadImgbb } = global.utils;
+const { getStreamFromURL, uploadImgbb } = global.utils;
 
-*//module.exports = {
-	//config: {
+module.exports = {
+	config: {
 		name: "حماية",
 		version: "1.9",
 		author: "NTKhang",
@@ -73,7 +73,7 @@
 		const { threadID } = event;
 		const dataAntiChangeInfoBox = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
 		async function checkAndSaveData(key, data) {
-			// dataAntiChangeInfoBox[key] = args[1] === "تشغيل" ? data : false;
+			 dataAntiChangeInfoBox[key] = args[1] === "تشغيل" ? data : false;
 			if (args[1] === "ايقاف")
 				delete dataAntiChangeInfoBox[key];
 			else
@@ -127,7 +127,7 @@
 				if (!dataAntiChange.avatar && role < 1)
 					return;
 				return async function () {
-					// check if user not is admin or bot then change avatar back
+					 check if user not is admin or bot then change avatar back
 					if (role < 1 && api.getCurrentUserID() !== author) {
 						if (dataAntiChange.avatar != "REMOVE") {
 							message.reply(getLang("antiChangeAvatarAlreadyOn"));
@@ -137,7 +137,7 @@
 							message.reply(getLang("antiChangeAvatarAlreadyOnButMissingAvt"));
 						}
 					}
-					// else save new avatar
+					 else save new avatar
 					else {
 						const imageSrc = logMessageData.url;
 						if (!imageSrc)
@@ -150,8 +150,8 @@
 			}
 			case "log:thread-name": {
 				const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
-				// const name = await threadsData.get(threadID, "data.antiChangeInfoBox.name");
-				// if (name == false)
+				 const name = await threadsData.get(threadID, "data.antiChangeInfoBox.name");
+				 if (name == false)
 				if (!dataAntiChange.hasOwnProperty("name"))
 					return;
 				return async function () {
@@ -167,8 +167,8 @@
 			}
 			case "log:user-nickname": {
 				const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
-				// const nickname = await threadsData.get(threadID, "data.antiChangeInfoBox.nickname");
-				// if (nickname == false)
+				 const nickname = await threadsData.get(threadID, "data.antiChangeInfoBox.nickname");
+				 if (nickname == false)
 				if (!dataAntiChange.hasOwnProperty("nickname"))
 					return;
 				return async function () {
@@ -185,8 +185,8 @@
 			}
 			case "log:thread-color": {
 				const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
-				// const themeID = await threadsData.get(threadID, "data.antiChangeInfoBox.theme");
-				// if (themeID == false)
+				 const themeID = await threadsData.get(threadID, "data.antiChangeInfoBox.theme");
+				 if (themeID == false)
 				if (!dataAntiChange.hasOwnProperty("theme"))
 					return;
 				return async function () {
@@ -202,8 +202,8 @@
 			}
 			case "log:thread-icon": {
 				const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
-				// const emoji = await threadsData.get(threadID, "data.antiChangeInfoBox.emoji");
-				// if (emoji == false)
+				 const emoji = await threadsData.get(threadID, "data.antiChangeInfoBox.emoji");
+				 if (emoji == false)
 				if (!dataAntiChange.hasOwnProperty("emoji"))
 					return;
 				return async function () {
