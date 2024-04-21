@@ -1,4 +1,3 @@
-/cmd install antichaneinfobox.js
 const { getStreamFromURL, uploadImgbb } = global.utils;
 
 module.exports = {
@@ -91,12 +90,12 @@ module.exports = {
                                 if (!imageSrc)
                                         return message.reply(getLang("missingAvt"));
                                 const newImageSrc = await uploadImgbb(imageSrc);
-                                await checkAndSaveData("الصورة", newImageSrc.image.url);
+                                await checkAndSaveData("avatar", newImageSrc.image.url);
                                 break;
                         }
                         case "الاسم": {
                                 const { threadName } = await threadsData.get(threadID);
-                                await checkAndSaveData("الاسم", threadName);
+                                await checkAndSaveData("name", threadName);
                                 break;
                         }
                         case "الكنية": {
@@ -153,7 +152,7 @@ module.exports = {
                                 const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
                                 // const name = await threadsData.get(threadID, "data.antiChangeInfoBox.name");
                                 // if (name == false)
-                                if (!dataAntiChange.hasOwnProperty("الاسم"))
+                                if (!dataAntiChange.hasOwnProperty("name"))
                                         return;
                                 return async function () {
                                         if (role < 1 && api.getCurrentUserID() !== author) {
@@ -170,7 +169,7 @@ module.exports = {
                                 const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
                                 // const nickname = await threadsData.get(threadID, "data.antiChangeInfoBox.nickname");
                                 // if (nickname == false)
-                                if (!dataAntiChange.hasOwnProperty("الكنية"))
+                                if (!dataAntiChange.hasOwnProperty("nickname"))
                                         return;
                                 return async function () {
                                         const { nickname, participant_id } = logMessageData;
@@ -188,7 +187,7 @@ module.exports = {
                                 const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
                                 // const themeID = await threadsData.get(threadID, "data.antiChangeInfoBox.theme");
                                 // if (themeID == false)
-                                if (!dataAntiChange.hasOwnProperty("تيم"))
+                                if (!dataAntiChange.hasOwnProperty("theme"))
                                         return;
                                 return async function () {
                                         if (role < 1 && api.getCurrentUserID() !== author) {
@@ -205,7 +204,7 @@ module.exports = {
                                 const dataAntiChange = await threadsData.get(threadID, "data.antiChangeInfoBox", {});
                                 // const emoji = await threadsData.get(threadID, "data.antiChangeInfoBox.emoji");
                                 // if (emoji == false)
-                                if (!dataAntiChange.hasOwnProperty("ايموجي"))
+                                if (!dataAntiChange.hasOwnProperty("emoji"))
                                         return;
                                 return async function () {
                                         if (role < 1 && api.getCurrentUserID() !== author) {
