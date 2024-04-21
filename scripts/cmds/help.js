@@ -12,7 +12,7 @@ const doNotDelete = "[ 🐐 | Goat Bot V2 ]";
 
 module.exports = {
 	config: {
-		name: "help",
+		name: "الاوامر",
 		version: "1.21",
 		author: "NTKhang",
 		countDown: 5,
@@ -218,7 +218,7 @@ module.exports = {
 					else if (value.config.description)
 						description = checkLangObject(value.config.description, langCode);
 					if (description)
-						describe += `╬ ${cropContent(description.charAt(0).toUpperCase() + description.slice(1), 50)}`;
+						describe += `⊰⁠⊹ฺ ${cropContent(description.charAt(0).toUpperCase() + description.slice(1), 50)}`;
 					arrayInfo.push({
 						data: describe,
 						priority: value.priority || 0
@@ -233,7 +233,7 @@ module.exports = {
 
 				const returnArray = allPage[page - 1] || [];
 				const startNumber = (page - 1) * numberOfOnePage + 1;
-				msg += (returnArray || []).reduce((text, item, index) => text += `│ ${index + startNumber}${index + startNumber < 10 ? " " : ""}. ${item.data}\n`, '').slice(0, -1);
+				msg += (returnArray || []).reduce((text, item, index) => text += `◉ ${index + startNumber}${index + startNumber < 10 ? " " : ""}. ${item.data}\n`, '').slice(0, -1);
 				await message.reply(getLang("help", msg, page, totalPage, commands.size, prefix, doNotDelete));
 			}
 			else if (sortHelp == "category") {
